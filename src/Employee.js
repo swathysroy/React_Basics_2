@@ -21,7 +21,7 @@ class Employee extends React.Component {
           <b>Name: </b>
         </label>
         <input
-          type="password"
+          type="text"
           placeholder="Enter Name"
           name="name"
           value={this.props.name}
@@ -73,8 +73,8 @@ Employee.propTypes = {
 };
 
 Employee.defaultProps = {
-  uname: "String value...",
-  pass: "String value..."
+  gender: "Male",
+  deptname: "HR"
 };
 
 export default Employee;
