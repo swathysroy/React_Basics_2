@@ -13,8 +13,14 @@ class Employee extends React.Component {
 }
 
 Employee.propTypes = {
-  uname: PropTypes.string.isRequired, 
-  pass: PropTypes.string.isRequired
+  empid : PropTypes.number.isRequired,
+  name : PropTypes.string.isRequired,
+  deptname: PropTypes.oneOf([
+    'HR','SALES','PROD'
+  ]), 
+  gender: PropTypes.oneOf([
+    'female', 'male'
+  ])
 };
 
 Employee.defaultProps = {
