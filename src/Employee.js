@@ -59,9 +59,24 @@ class Employee extends React.Component {
           name="age"
           value={this.props.age}
         />
+        <br />
+        <br />
+        <button type="submit">Submit</button>
       </div>
     );
   }
+}
+
+function ageUnder(props, propName, componentName) {
+  componentName = comopnentName || 'ANONYMOUS';
+
+  if (props[propName]) {
+    let value = props[propName];
+    if (typeof value === 'number') {
+        return value < 60 ? null : new Error(propName + ' in ' + componentName + " is greater than 60");
+    }
+  }
+  return null;
 }
 
 Employee.propTypes = {
@@ -69,12 +84,8 @@ Employee.propTypes = {
   name: PropTypes.string.isRequired,
   deptname: PropTypes.oneOf(["HR", "SALES", "PROD"]),
   gender: PropTypes.oneOf(["Female", "Male"]),
-  age: PropTypes.number
+  age: ageUnder
 };
 
-Employee.defaultProps = {
-  gender: "Male",
-  deptname: "HR"
-};
 
 export default Employee;
