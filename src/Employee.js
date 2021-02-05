@@ -12,4 +12,14 @@ class Employee extends React.Component {
   }
 }
 
+Employee.propTypes = {
+  uname: PropTypes.string.isRequired, 
+  pass: PropTypes.string.isRequired
+};
+
+Employee.defaultProps = {
+  uname: "String value...",
+  pass: "String value..."
+};
+
 export default Employee;
